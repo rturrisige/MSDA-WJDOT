@@ -1,3 +1,17 @@
+	Multi-source domain adaptation via weighted joint distributions optimal transport
+		Rosanna Turrisi, Rémi Flamary, Alain Rakotomamonjy, Massimiliano Pontil
+
+Link to the article: https://proceedings.mlr.press/v180/turrisi22a.html
+
+@inproceedings{turrisi2022multi,
+  title={Multi-source domain adaptation via weighted joint distributions optimal transport},
+  author={Turrisi, Rosanna and Flamary, R{\'e}mi and Rakotomamonjy, Alain and Pontil, Massimiliano},
+  booktitle={Uncertainty in Artificial Intelligence},
+  pages={1970--1980},
+  year={2022},
+  organization={PMLR}
+}
+
 ########################################### READ ME #############################################
 
 The codes have been tested on Python 3.7.6. In order to run, the following Python modules       
@@ -43,5 +57,3 @@ are required:
 - multi_task_learning.py: contains the multi-task-learning (MTL) functions and model.
 - music_speech_discrimination.py: runs the MTL training, extracts the feature embedding from target and source datasets and applies the wjdot algorithm. It takes 3 command-line arguments:
   1) the path of the folder containing the data; 2) an integer between 0 and 3 to choose the target domain; 3) the early stopping strategy that can be "acc" or "sse".
-  
- 
