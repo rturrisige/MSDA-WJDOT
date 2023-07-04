@@ -1,0 +1,78 @@
+EasyCall V1 contains speech recordings from 13 dysarthric speakers and 11 healthy speakers, that are
+f01, f02, f03, f04, m01, m02, m03, m04, m05, m06, m07, m08, m09;
+fc01, fc02, fc03, fc04, mc01, mc02, mc03, mc04, mc05, mc06, mc07.
+
+Each speaker folder contain many subfolders corresponding to the recording sessions.
+During a recording session the following utterances have been recorded:
+
+Aggiungi ai preferiti
+Aggiungi
+Apri rubrica
+Apri
+Attiva vivavoce
+Bue
+Cancella contatto
+Cancella tutto
+Cancella
+Cella
+Chiama emergenza
+Chiama ultimo numero
+Chiama
+Chiamata
+Chiudi applicazione
+Chiudi rubrica
+Chiudi
+Cinque
+Deseleziona
+Disattiva vivavoce
+Due
+Fai una telefonata
+Indietro
+Mali
+Muovi
+Muto
+Nave
+No
+Nove
+Nuovo contatto
+Otto
+Preferiti
+Quattro
+Raggiungi
+Richiama
+Rimuovi
+Rubrica
+Sali
+Salva
+Scendi
+Scesi
+Scorri verso il basso
+Scorri verso l’alto
+Sei
+Seleziona
+Sette
+Sezione
+Si
+Sopra
+Sotto
+Stop
+Tastiera
+Termina chiamata
+Terminare
+Top
+Tra
+Tre
+Uno
+Vai alla pagina principale
+Vai alla tastiera
+Vai nei preferiti
+Vai nel registro chiamate
+Vai nella rubrica
+Vivavoce
+Zelo
+Zero
+
+In the second version, the command "Esci da rubrica" has been added. Further, for each session the key command "Apri rubrica" is recorded three times instead of once. 
+The EasyCall V2 includes 
+- 12 dysarthric speakers: f05, f05, f07, f08, f09, m11, m12, m13, m14, m15, m16, m17;
+- 12 healthy speakers: fc05, fc06, fc07, fc08, fc09, fc10, mc08, mc09, mc10, mc11, mc12, mc13.
