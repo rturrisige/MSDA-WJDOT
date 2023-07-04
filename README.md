@@ -1,25 +1,59 @@
-# Machine Learning (ML) and Deep Learning (DL) based methods
+# Multi-source domain adaptation via weighted joint distributions optimal transport
+###		Rosanna Turrisi, Rémi Flamary, Alain Rakotomamonjy, Massimiliano Pontil
 
-This repository includes different projects in the field of Artificial Intelligence (AI).
+[![Python 3.7.6](https://img.shields.io/badge/python-3.7.6-blue.svg)](https://www.python.org/downloads/release/python-376/)
 
-## MSDA-WJDOT
-It is an algorithm based on Optimal Transport that performs multi-source domain adaptation. 
-It has been implemented in PyTorch.
+The codes have been tested on Python 3.7.6. In order to run, the following Python modules       
+are required:
 
-## DL4dysarthricASR 
-It contains multiple folders related to different Deep Learning strategies to address Automatic Speech Recognition for Dysarthric patients.
+- Numpy/SciPy
+- PyLab
+- Matplotlib
+- PyTorch and dependencies from http://pytorch.org.
+- POT python package 
+- PyDub
+- librosa
 
-- AF_Synthesis: given audio and/or phonetic labels it generates Articulatory Features.
-  The codes have been implemented in TensorFlow 1.0.
-- SA_MSDA-WJDOT: it applies MSDA-WJDOT algorithm to the ASR systems, in which the target domain is a dysarthric speaker.
-  The codes have been implemented in PyTorch.
-- EasyCall: it contains information about a collected Dysarthric Speech Corpus called "EasyCall".
 
-## AD_classification
-It is a DL pipeline from data processing to model evaluation in the context of Alzheimer's Disease (AD) diagnosis.
-The codes have been implemented in PyTorch.
+## Reproduce plots
 
-## 3D_CNN_pretrained_model
-It provides a 3D-CNN model pretrained on ADNI dataset to diagnose AD. 
-The model can be directly used for external validation or as feature extractor.
-The codes have been implemented in PyTorch. 
+- `visualization_2D_domain_shift.py`: plots Figure 1 in the paper (illustration of MSDA-WJDOT on 2D simulated data - domain shift)
+- `visualization_3D_domain_shift.py`: similarly to Figure 3 in the paper, it plots the accuracy obtained by exploiting the Exact OT and Bures and the recovered alpha weights for an increasing target rotation angle. 
+- `visualization_2sources_target_shift.py`: illustration of MSDA-WJDOT on target shift problem. It plots Source and Target data (Figure 4: left), the reweighted sources and the found classifier (Figure 4 left-center) and the alpha coefficients (Figure 4: right).
+
+## Simulations
+
+- `ot_torch.py`: contains the optimal transport functions (e.g., objective function of Eq. (8) in the paper)
+- `wjdot.py`: contains the wjdot algorithm (Algorithm 1 in the paper) without and with early stopping (based on the sse or the weighted sum of the accuracies)
+
+- `simulated_data_domain_shift.py`: generates 3D-Gaussian distributed source and target datasets with different angle rotations and applies the  MSDA-WJDOT algorithm to solve MSDA with domain shift.
+- `simulated_data_target_shift.py`: generates 2D-Gaussian distributed source and target datasets with different proportions of classes and applies the MSDA-WJDOT algorithm to solve MSDA with target shift.
+
+- `simulated_data_domain_shift_bound.py`: generates 3D-Gaussian distributed source and target datasets with different angle rotations and applies the  MSDA-WJDOT algorithm giving the optimal Alpha. This is used to compute the upper bound of the Lambda term in Theorem 1. Similarly, the upper bound is computed by using random and uniform Alpha weights. 
+
+- `simulated_data_target_shift`: generates 2D-Gaussian distributed source and target datasets with different proportions of classes and applies the MSDA-WJDOT algorithm to solve MSDA with target shift.
+
+- `object_recognition.py`: takes as input the datasets in the embedding, split in training, validation and testing. 
+  Each of these is a list of matrices with dimension [number of samples, embedding dimension + 1], representing the concatenation of the embedding features and the labels.
+  WJDOT is applied by leaving out one dataset at a time as target domain. 
+
+- `music_speech_processing.py`: contains the functions to generate the noisy datasets and to extract the MFCCs from the audio files.
+- `multi_task_learning.py`: contains the multi-task-learning (MTL) functions and model.
+- `music_speech_discrimination.py`: runs the MTL training, extracts the feature embedding from target and source datasets and applies the wjdot algorithm. It takes 3 command-line arguments:
+  1) the path of the folder containing the data; 2) an integer between 0 and 3 to choose the target domain; 3) the early stopping strategy that can be "acc" or "sse".
+
+## Citation
+
+Please cite [this paper](https://proceedings.mlr.press/v180/turrisi22a.html) when using the data:
+
+```latex
+@inproceedings{turrisi2022multi,
+  title={Multi-source domain adaptation via weighted joint distributions optimal transport},
+  author={Turrisi, Rosanna and Flamary, R{\'e}mi and Rakotomamonjy, Alain and Pontil, Massimiliano},
+  booktitle={Uncertainty in Artificial Intelligence},
+  pages={1970--1980},
+  year={2022},
+  organization={PMLR}
+}
+
+```
