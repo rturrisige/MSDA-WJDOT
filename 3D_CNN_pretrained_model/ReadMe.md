@@ -13,7 +13,7 @@ to perform inference and feature extraction.
     The pre-trained model can be adopted for AD classification on external datasets. 
 An example of how to perform inference can be found in `run_inference_AD_pretrained.sh`.
 
-- ### FEATURE EXTRACTOR
+- ### FEATURE EXTRACTION
    The pre-trained model can be used to extract abstract features and create DL-based MRI embeddings.
 An example of how to perform it can be found in `extract_embeddings_AD_pretrained.sh`.
 
