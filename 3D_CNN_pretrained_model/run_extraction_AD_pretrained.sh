@@ -3,8 +3,8 @@
 # ARGUMENTS
 # -----------------------------
 # DATA_DIR: str
-# 	it must contain npy files. Each npy file contains a list, where the first
-# 	element is the numpy array related to the MRI and the second one is the corresponding label.
+# 	it must contain npy files. Each npy file is a list [numpy tensor, int].
+# 	The first element is the numpy tensor representing the MRI and the second one (int) is the corresponding label.
 # SAVER_DIR: str
 # 	it is the path to the folder in which data will be saved.
 # EMBEDDING: int between 0 and 7

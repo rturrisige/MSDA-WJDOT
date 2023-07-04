@@ -3,7 +3,7 @@
 # ARGUMENTS
 # -----------------------------
 # DATA_DIR: str
-# 	must contain npy files. Each npy file contains the numpy array related to the MRI.
+# 	must contain npy files. Each npy file contains the numpy tensor representing the MRI.
 # SAVER_DIR: str
 # 	it is the path to the folder in which data will be saved.
 # BATCH_SIZE: int
